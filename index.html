@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project II - The Game of Life</title>
+        <style> @import url("styles.css"); </style>
+    </head>
+    <body>
+        <header>
+            <section class="flex-row width-xlg justify-start">
+                <h1 id="headerTitle" class="header-title">The Game of Life</h1>
+            </section>
+        </header>
+
+        <main>
+            <section id="mainContent" class="grid-main-template">
+                <section id="mainTopSection" class="grid-main-top">
+                    <section id="layoutTGOL" class="grid-layout">
+                    </section>
+                </section>
+                <section id="mainBottonSection" class="grid-main-bottom">
+                    <section id="layoutBottom" class="grid-bottom">
+                        <section id="layoutButtons" class="grid-layout-buttons">
+                            <section id="xsLayoutSize" class="width-lg">
+                                <input id="xsLayoutButton" type="button" value="21x7"
+                                    class="button-style" title="21x7" onclick="gridLayout(21, 7)">
+                            </section>
+                            
+                            <section id="sLayoutSize" class="width-lg">
+                                <input id="sLayoutButton" type="button" value="27x9"
+                                    class="button-style" title="27x9" onclick="gridLayout(27, 9)">
+                            </section>
+                            
+                            <section id="mdLayoutSize" class="width-lg">
+                                <input id="mdLayoutButton" type="button" value="33x11"
+                                    class="button-style" title="33x11" onclick="gridLayout(33, 11)">
+                            </section>
+                            
+                            <section id="lgLayoutSize" class="width-lg">
+                                <input id="lgLayoutButton" type="button" value="39x13"
+                                    class="button-style" title="39x13" onclick="gridLayout(39, 13)">
+                            </section>
+                            
+                            <section id="xlgLayoutSize" class="width-lg">
+                                <input id="xlgLayoutButton" type="button" value="45x15"
+                                    class="button-style" title="45x15" onclick="gridLayout(45, 15)">
+                            </section>
+                        </section>
+
+                        <section id="layoutStartButton" class="grid-start-button">
+                            <section id="startButtonSection" class="width-lg">
+                                <input id="buttonStart" type="button" value="Start"
+                                    class="button-style" title="Start" onclick="">
+                            </section>
+                        </section>
+
+                        <section id="layoutRandomButton" class="grid-random-button">
+                            <section id="randomButtonSection" class="width-lg">
+                                <input id="buttonRandom" type="button" value="Random"
+                                    class="button-style" title="Random" onclick="random()">
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+        <script src="app.js"></script>
+    </body>
+</html>
