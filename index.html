@@ -19,6 +19,10 @@
                 <section id="mainTopSection" class="grid-main-top">
                     <section id="layoutTGOL" class="grid-layout">
                     </section>
+                    <section id="labelsTGOL" class="grid-labels">
+                        <label class="justify-text-start" id="labelSize" for="">Hola</label>
+                        <label class="justify-text-end" id="labelLife" for="labelLife">Generation: 0</label>
+                    </section>
                 </section>
                 <section id="mainBottonSection" class="grid-main-bottom">
                     <section id="layoutBottom" class="grid-bottom">
@@ -52,7 +56,7 @@
                         <section id="layoutStartButton" class="grid-start-button">
                             <section id="startButtonSection" class="width-lg">
                                 <input id="buttonStart" type="button" value="Start"
-                                    class="button-style" title="Start" onclick="">
+                                    class="button-style" title="Start" onclick="start()">
                             </section>
                         </section>
 
@@ -60,6 +64,8 @@
                             <section id="randomButtonSection" class="width-lg">
                                 <input id="buttonRandom" type="button" value="Random"
                                     class="button-style" title="Random" onclick="random()">
+                                <input id="buttonClear" type="button" value="Clear" 
+                                    class="button-style hide" title="Clear" onclick="clearBoard()">
                             </section>
                         </section>
                     </section>
