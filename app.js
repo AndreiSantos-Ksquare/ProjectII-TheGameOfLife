@@ -42,7 +42,7 @@ function generateCellContent() {
 // Function used to generate dynamic layout, creating sections for each cell
 function sectionLayout(newGridId) {
     const gridId = document.getElementById(newGridId);
-    const cellNewContent = statePlay ? cellNeighbors.slice() : layoutSizeContent.slice();
+    const cellNewContent = statePlay ? cellNeighborsCurent.slice() : layoutSizeContent.slice();
     cellNewContent.forEach( (element, index) => {
         if (element.x > 1 && element.x < sizeLX && element.y > 1 && element.y < sizeLY) {
             const newCell = document.createElement('section');
@@ -228,7 +228,7 @@ function increase() {
 function restart(){
     clearTimeout(timeOut);
     btnClear.classList.remove(hide);
-    cellNeighbors = [];
+    cellNeighborsCurent = [];
     pause = false;
     counter = 0;
     labelGenerationCount.innerHTML = "Generation: " + counter;
@@ -248,7 +248,7 @@ function clearBoard(){
     layoutButtons.classList.remove(hide);
     btnRandom.classList.remove(hide);
     restart();
-    cellNeighbors = []
+    cellNeighborsCurent = []
     changeLayout(35, 13, layoutSizeText);
 }
 
