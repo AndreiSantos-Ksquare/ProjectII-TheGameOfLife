@@ -42,7 +42,8 @@ function generateCellContent() {
 // Function used to generate dynamic layout, creating sections for each cell
 function sectionLayout(newGridId) {
     const gridId = document.getElementById(newGridId);
-    const cellNewContent = statePlay ? cellNeighborsCurent.slice() : layoutSizeContent.slice();
+    const cellNewContent = cellNeighborsCurent.slice();
+
     cellNewContent.forEach( (element, index) => {
         if (element.x > 1 && element.x < sizeLX && element.y > 1 && element.y < sizeLY) {
             const newCell = document.createElement('section');
@@ -123,8 +124,10 @@ function random() {
     const size = Math.floor(Math.random() * ((sizeLX * sizeLY) - 60)) + 1;
     for (let count = 1; count < size; count++) {
         const posCell = Math.floor(Math.random() * (layoutSizeContent.length) - 1) + 1;
+
         layoutSizeContent[posCell].x > 1 && layoutSizeContent[posCell].x < sizeLX && layoutSizeContent[posCell].y > 1 && layoutSizeContent[posCell].y < sizeLY ?
             layoutSizeContent[posCell].state = 'alive' : null;
+
         cellNeighborsCurent[posCell].x > 1 && cellNeighborsCurent[posCell].x < sizeLX && cellNeighborsCurent[posCell].y > 1 && cellNeighborsCurent[posCell].y < sizeLY ?
             cellNeighborsCurent[posCell].state = 'alive' : null;
     }
@@ -228,13 +231,12 @@ function increase() {
 function restart(){
     clearTimeout(timeOut);
     btnClear.classList.remove(hide);
-    cellNeighborsCurent = [];
     pause = false;
     counter = 0;
     labelGenerationCount.innerHTML = "Generation: " + counter;
     btnStart.value = "Start";
     
-    gridLayout(sizeLX, sizeLY, false);
+    gridLayout(sizeLX, sizeLY, true);
     buttonsDisabled();
 }
 
